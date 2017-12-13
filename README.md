@@ -1,31 +1,31 @@
 # Events
 
-| Event                  | Collection                          | Trigger                                         |
-| ---------------------- | ----------------------------------- | ----------------------------------------------- |
-| content.create         | [Content](#content)                 | Occurs whenever Content is created.             |
-| content.update         | [Content](#content)                 | Occurs whenever Content is updated.             |
-| content.delete         | [Content](#content)                 | Occurs whenever Content is deleted.             |
-| comments.create        | [Comments](#comments)               | Occurs whenever a Comment is created.           |
-| comments.update        | [Comments](#comments)               | Occurs whenever a Comment is updated.           |
-| comments.delete        | [Comments](#comments)               | Occurs whenever a Comment is deleted.           |
-| events.create          | [Events](#events)                   | Occurs whenever an Event is created.            |
-| events.update          | [Events](#events)                   | Occurs whenever an Event is updated.            |
-| events.delete          | [Events](#events)                   | Occurs whenever an Event is deleted.            |
-| messages.create        | [Messages](#messages)               | Occurs whenever a Message is created.           |
-| messages.update        | [Messages](#messages)               | Occurs whenever a Message is updated.           |
-| messages.delete        | [Messages](#messages)               | Occurs whenever a Message is deleted.           |
-| notes.create           | [Notes](#notes)                     | Occurs whenever a Note is created.              |
-| notes.update           | [Notes](#notes)                     | Occurs whenever a Note is updated.              |
-| notes.delete           | [Notes](#notes)                     | Occurs whenever a Note is deleted.              |
-| projects.create        | [Marketing Projects](#projects)     | Occurs whenever a Marketing Project is created. |
-| projects.update        | [Marketing Projects](#projects)     | Occurs whenever a Marketing Project is updated. |
-| projects.delete        | [Marketing Projects](#projects)     | Occurs whenever a Marketing Project is deleted. |
-| tasks.create           | [Tasks](#tasks)                     | Occurs whenever a Task is created.              |
-| tasks.update           | [Tasks](#tasks)                     | Occurs whenever a Task is updated.              |
-| tasks.delete           | [Tasks](#tasks)                     | Occurs whenever a Task is deleted.              |
-| wordpress_posts.create | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress Post is created.    |
-| wordpress_posts.update | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress Post is updated.    |
-| wordpress_posts.delete | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress Post is deleted.    |
+| Event                  | Collection                                | Trigger                                         |
+| ---------------------- | ----------------------------------------- | ----------------------------------------------- |
+| content.create         | [Content](#content)                       | Occurs whenever Content is created.             |
+| content.update         | [Content](#content)                       | Occurs whenever Content is updated.             |
+| content.delete         | [Content](#content)                       | Occurs whenever Content is deleted.             |
+| comments.create        | [Comments](#comments)                     | Occurs whenever a Comment is created.           |
+| comments.update        | [Comments](#comments)                     | Occurs whenever a Comment is updated.           |
+| comments.delete        | [Comments](#comments)                     | Occurs whenever a Comment is deleted.           |
+| events.create          | [Events](#events)                         | Occurs whenever an Event is created.            |
+| events.update          | [Events](#events)                         | Occurs whenever an Event is updated.            |
+| events.delete          | [Events](#events)                         | Occurs whenever an Event is deleted.            |
+| messages.create        | [Messages](#messages)                     | Occurs whenever a Message is created.           |
+| messages.update        | [Messages](#messages)                     | Occurs whenever a Message is updated.           |
+| messages.delete        | [Messages](#messages)                     | Occurs whenever a Message is deleted.           |
+| notes.create           | [Notes](#notes)                           | Occurs whenever a Note is created.              |
+| notes.update           | [Notes](#notes)                           | Occurs whenever a Note is updated.              |
+| notes.delete           | [Notes](#notes)                           | Occurs whenever a Note is deleted.              |
+| projects.create        | [Marketing Projects](#marketing-projects) | Occurs whenever a Marketing Project is created. |
+| projects.update        | [Marketing Projects](#marketing-projects) | Occurs whenever a Marketing Project is updated. |
+| projects.delete        | [Marketing Projects](#marketing-projects) | Occurs whenever a Marketing Project is deleted. |
+| tasks.create           | [Tasks](#tasks)                           | Occurs whenever a Task is created.              |
+| tasks.update           | [Tasks](#tasks)                           | Occurs whenever a Task is updated.              |
+| tasks.delete           | [Tasks](#tasks)                           | Occurs whenever a Task is deleted.              |
+| wordpress_posts.create | [WordPress Posts](#wordpress-posts)       | Occurs whenever a WordPress Post is created.    |
+| wordpress_posts.update | [WordPress Posts](#wordpress-posts)       | Occurs whenever a WordPress Post is updated.    |
+| wordpress_posts.delete | [WordPress Posts](#wordpress-posts)       | Occurs whenever a WordPress Post is deleted.    |
 
 # Collection Schema
 
