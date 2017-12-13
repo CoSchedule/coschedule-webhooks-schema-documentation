@@ -1,30 +1,31 @@
 # Events
-| Event          | Collection           | Trigger                             |
-| -------------- | -------------------- | ----------------------------------- |
-| comments.create | [Comments](#comments) | Occurs whenever a comment is created. |
-| comments.update | [Comments](#comments) | Occurs whenever a comment is updated. |
-| comments.delete | [Comments](#comments) | Occurs whenever a comment is deleted. |
-| content.create | [Content](#content) | Occurs whenever content is created. |
-| content.update | [Content](#content) | Occurs whenever content is updated. |
-| content.delete | [Content](#content) | Occurs whenever content is deleted. |
-| events.create | [Events](#events) | Occurs whenever an event is created. |
-| events.update | [Events](#events) | Occurs whenever an event is updated. |
-| events.delete | [Events](#events) | Occurs whenever an event is deleted. |
-| messages.create | [Messages](#messages) | Occurs whenever a message is created. |
-| messages.update | [Messages](#messages) | Occurs whenever a message is updated. |
-| messages.delete | [Messages](#messages) | Occurs whenever a message is deleted. |
-| notes.create | [Notes](#notes) | Occurs whenever a note is created. |
-| notes.update | [Notes](#notes) | Occurs whenever a note is updated. |
-| notes.delete | [Notes](#notes) | Occurs whenever a note is deleted. |
-| projects.create | [Projects](#projects) | Occurs whenever a Marketing Project is created. |
-| projects.update | [Projects](#projects) | Occurs whenever a Marketing Project is updated. |
-| projects.delete | [Projects](#projects) | Occurs whenever a Marketing Project is deleted. |
-| tasks.create | [Tasks](#tasks) | Occurs whenever a task is created. |
-| tasks.update | [Tasks](#tasks) | Occurs whenever a task is updated. |
-| tasks.delete | [Tasks](#tasks) | Occurs whenever a task is deleted. |
-| wordpress_posts.create | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress post is created. |
-| wordpress_posts.update | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress post is updated. |
-| wordpress_posts.delete | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress post is deleted. |
+
+| Event                  | Collection                          | Trigger                                         |
+| ---------------------- | ----------------------------------- | ----------------------------------------------- |
+| content.create         | [Content](#content)                 | Occurs whenever Content is created.             |
+| content.update         | [Content](#content)                 | Occurs whenever Content is updated.             |
+| content.delete         | [Content](#content)                 | Occurs whenever Content is deleted.             |
+| comments.create        | [Comments](#comments)               | Occurs whenever a Comment is created.           |
+| comments.update        | [Comments](#comments)               | Occurs whenever a Comment is updated.           |
+| comments.delete        | [Comments](#comments)               | Occurs whenever a Comment is deleted.           |
+| events.create          | [Events](#events)                   | Occurs whenever an Event is created.            |
+| events.update          | [Events](#events)                   | Occurs whenever an Event is updated.            |
+| events.delete          | [Events](#events)                   | Occurs whenever an Event is deleted.            |
+| messages.create        | [Messages](#messages)               | Occurs whenever a Message is created.           |
+| messages.update        | [Messages](#messages)               | Occurs whenever a Message is updated.           |
+| messages.delete        | [Messages](#messages)               | Occurs whenever a Message is deleted.           |
+| notes.create           | [Notes](#notes)                     | Occurs whenever a Note is created.              |
+| notes.update           | [Notes](#notes)                     | Occurs whenever a Note is updated.              |
+| notes.delete           | [Notes](#notes)                     | Occurs whenever a Note is deleted.              |
+| projects.create        | [Marketing Projects](#projects)     | Occurs whenever a Marketing Project is created. |
+| projects.update        | [Marketing Projects](#projects)     | Occurs whenever a Marketing Project is updated. |
+| projects.delete        | [Marketing Projects](#projects)     | Occurs whenever a Marketing Project is deleted. |
+| tasks.create           | [Tasks](#tasks)                     | Occurs whenever a Task is created.              |
+| tasks.update           | [Tasks](#tasks)                     | Occurs whenever a Task is updated.              |
+| tasks.delete           | [Tasks](#tasks)                     | Occurs whenever a Task is deleted.              |
+| wordpress_posts.create | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress Post is created.    |
+| wordpress_posts.update | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress Post is updated.    |
+| wordpress_posts.delete | [WordPress Posts](#wordpress-posts) | Occurs whenever a WordPress Post is deleted.    |
 
 # Collection Schema
 
@@ -82,7 +83,43 @@
 | label_id    | `integer`   | The ID of the Color Label set on the event.                                              |
 
 ## Messages
-- Coming soon.
+| Property                     | Type        | Description                                                                                                                          |
+| ---------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| id                           | `integer`   | Unique identifier for the messages object.                                                                                           |
+| service_id                   | `integer`   | The ID of the service (generally a social profile) selected for the message.                                                         |
+| calendar_id                  | `integer`   | The ID of the message's parent calendar.                                                                                             |
+| parent_type                  | `string`    | Defines the parent type of the message. Can be: `message`, `wordpress_post`, or `content`.                                           |
+| parent_id                    | `integer`   | The ID of the message's parent.                                                                                                      |
+| status                       | `string`    | Defines the status of the message. Can be: `draft`, `pending`, `future`, or `publish`.                                               |
+| date_type                    | `string`    | Defines the type of the date value. Can be: `-x`, `x`, `custom` (for `MM/DD/YYYY` format), or a day value offset (0 or greater)      |
+| date_value                   | `string`    | Can be a `MM/DD/YYYY` format date for standalone messages, or a day offset value for a message whose date is relational to a parent. |
+| time_type                    | `string`    |                                                                                                                                      |
+| time_value                   | `string`    |                                                                                                                                      |
+| schedule                     | `timestamp` | Time at which the message has been scheduled for delivery. Measured in seconds since the Unix epoch.                                 |
+| type                         | `string`    | Defines the type of the message. Can be: `image`, `link`, `text`, or `video`.                                                        |
+| text                         | `string`    | The text of the message.                                                                                                             |
+| text_computed                | `string`    |                                                                                                                                      |
+| photos                       | `array`     |                                                                                                                                      |
+| photos_sent                  | `array`     |                                                                                                                                      |
+| photo_computed               | `string`    |                                                                                                                                      |
+| cached_image_id              | `integer`   |                                                                                                                                      |
+| link                         | `string`    |                                                                                                                                      |
+| link_title                   | `string`    |                                                                                                                                      |
+| link_description             | `string`    |                                                                                                                                      |
+| sent                         | `boolean`   |                                                                                                                                      |
+| sent_time                    | `timestamp` |                                                                                                                                      |
+| unscheduled                  | `boolean`   |                                                                                                                                      |
+| failure_description          | `string`    | Defines the failure description string of the message.                                                                               |
+| custom_analytics_querystring | `string`    |                                                                                                                                      |
+| dest_id                      | `string`    |                                                                                                                                      |
+| media                        | `string`    |                                                                                                                                      |
+| social_tags                  | `array`     |                                                                                                                                      |
+| requeue                      | `boolean`   |                                                                                                                                      |
+| shared_to_instagram          | `boolean`   |                                                                                                                                      |
+| targeting_options            | `array`     |                                                                                                                                      |
+| project_id                   | `integer`   | Defines the parent project id if the message is part of a Marketing Project.                                                         |
+| in_draft_bin                 | `boolean`   | Defines if the message appears in the Draft Bin instead of on the calendar.                                                          |
+| label_id                     | `integer`   | The ID of the Color Label set on the message.                                                                                        |
 
 ## Notes
 | Property       | Type        | Description                                                                                                    |
@@ -103,7 +140,7 @@
 | -------------- | ----------- | ---------------------------------------------------------------------------------------------------- |
 | id             | `integer`   | Unique identifier for the projects object.                                                           |
 | title          | `string`    | Title of the project.                                                                                |
-| description    | `string`    | Defines the description string of the projecet.                                                      |
+| description    | `string`    | Defines the description string of the project.                                                       |
 | schedule       | `timestamp` | Time at which the project has been scheduled for delivery. Measured in seconds since the Unix epoch. |
 | end_date       | `timestamp` | Time at which the project will end. Measured in seconds since the Unix epoch.                        |
 | team_member_id | `integer`   | The ID of the team member assigned as the owner of the project.                                      |
@@ -114,7 +151,31 @@
 | tags           | `array`     | An array of ids defining the tags attached to the project  (e.g. `[521419, 749243, 816307]`).        |
 
 ## Tasks
-- Coming soon.
+| Property            | Type        | Description                                                                                                                     |
+| ------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| id                  | `integer`   | Unique identifier for the tasks object.                                                                                         |
+| assignee_tm_id      | `integer`   | The ID of the Team Member to whom the task is assigned.                                                                         |
+| assigner_tm_id      | `integer`   | The ID of the Team Member who created the task.                                                                                 |
+| parent_type         | `string`    | Defines the parent type of the task. Can be: `message`, `wordpress_post`, or `content`.                                         |
+| parent_id           | `integer`   | Defines the ID of the task's parent.                                                                                            |
+| calendar_id         | `integer`   | The ID of the task's parent calendar.                                                                                           |
+| task                | `string`    | The title of the task.                                                                                                          |
+| date_type           | `string`    | Defines the type of the date value. Can be: `-x`, `x`, `custom` (for `MM/DD/YYYY` format), or a day value offset (0 or greater) |
+| date_value          | `string`    | Can be a `MM/DD/YYYY` format date for standalone tasks, or a day offset value for a task whose date is relational to a parent.  |
+| description         | `string`    | Defines the description string of the task.                                                                                     |
+| task_due_date       | `timestamp` | Date/time when the task is due, and the date it appears on the calendar. Measured in seconds since the Unix epoch.              |
+| task_timestamp      | `timestamp` | Time at which the task was created. Measured in seconds since the Unix epoch.                                                   |
+| completed           | `boolean`   | Defines if the task is marked as completed.                                                                                     |
+| sort                | `string`    | An numerical value used for sort order when the task is a child of another collection such as "Content".                        |
+| dashboard_sort      | `string`    | An numerical value used for custom sort order when on the CoSchedule dashboard.                                                 |
+| completed_timestamp | `timestamp` | Time at which the task was completed. Measured in seconds since the Unix epoch.                                                 |
+| project_id          | `integer`   | Defines the parent project id if the task is part of a Marketing Project.                                                       |
+| in_draft_bin        | `boolean`   | Defines if the task appears in the Draft Bin instead of on the calendar.                                                        |
+| label_id            | `integer`   | The ID of the Color Label set on the task.                                                                                      |
+| approver_tm_id      | `integer`   | The ID of the Team Member assigned as the approver of the task. ("Requires Approval By")                                        |
+| approved_at         | `timestamp` | Time at which the task was approved. Measured in seconds since the Unix epoch.                                                  |
+| denied_at           | `timestamp` | Time at which the task was denied. Measured in seconds since the Unix epoch.                                                    |
+| completed_by        | `timestamp` | The ID of the Team Member that completed the task.                                                                              |
 
 ## WordPress Posts
 | Property                | Type        | Description                                                                                                                                                        |
@@ -143,3 +204,4 @@
 | in_draft_bin            | `boolean`   | Defines if the post appears in the Draft Bin instead of on the calendar.                                                                                           |
 | label_id                | `integer`   | The ID of the Color Label set on the post.                                                                                                                         |
 | tags                    | `array`     | An array of ids defining the tags attached to the post (e.g. `[521419, 749243, 816307]`).                                                                          |
+| wordpress_site_id       | `integer`   | The ID of the parent WordPress Site object the post belongs to.                                                                                                    |
